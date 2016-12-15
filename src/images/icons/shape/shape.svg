@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="17px" viewBox="0 0 20 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>A6397C37-FD5A-46B6-95EB-92B3D88D8C7B</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M243.052399,551 L241.719459,549.706522 C236.768539,545.456522 233.531399,542.592391 233.531399,539.081522 C233.531399,536.217391 235.816439,534 238.767949,534 C240.386519,534 242.005089,534.73913 243.052399,535.940217 C244.099709,534.73913 245.718279,534 247.336849,534 C250.288359,534 252.573399,536.217391 252.573399,539.081522 C252.573399,542.592391 249.336259,545.456522 244.385339,549.706522 L243.052399,551 L243.052399,551 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="19.0420005" height="17" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-560.000000, -544.000000)" id="Товары" stroke-width="4" stroke="#BFBFBF">
+            <g transform="translate(10.000000, 10.000000)">
+                <g id="Ряд">
+                    <g id="CatCard_details" transform="translate(317.000000, 0.000000)">
+                        <use id="Shape" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

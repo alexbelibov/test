@@ -1,0 +1,113 @@
+/*
+* @components   Product Template
+*/
+
+.productTempl{
+	width: calc((1260px / 4) - (30px / 4));
+	padding: 20px 15px 30px;
+	background: $white;
+	&__vendorCode{
+		font-family: $proximaNova-light;
+		font-size: 13px;
+		line-height: 15px;
+		color: $gray;
+		text-align: right;
+	}
+	&__img{
+		position: relative;
+		max-width: 280px;
+		height: 200px;
+		//background: $gray-lighter;
+		background: $white;
+		> img{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			max-height: 200px;
+			@include transform(translateX(-50%)translateY(-50%));
+		}
+	}
+	&__state{
+		@include clearfix();
+		&_icon{
+			position: relative;
+			float: left;
+			top: calc((16px - 7px) / 2);
+			width: 9px;
+			height: 7px;
+			margin-right: 8px;
+			background: url("../images/done/path-1176@3x.png") no-repeat center center / cover;
+		}
+		&_text{
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			font-size: 13px;
+			line-height: 16px;
+			color: $secondary-1;
+		}
+	}
+	&__title{
+		font-size: 18px;
+		line-height: 22px;
+		color: darken(saturate(adjust-hue($default, 0.0000), 0.0000), 5.0980);
+	}
+	&__item{
+		display: block;
+		font-size: 12px;
+		line-height: 22px;
+		font-family: $proximaNova-light;
+		&_key{
+			display: inline-block;
+			color: $gray;
+			margin-right: 2px;
+		}
+		&_value{
+			display: initial;
+			margin-left: 2px;
+		}
+	}
+	&__icon-wrap{
+		position: relative;
+		float: right;
+		top: calc((35px - 17px) / 2);
+		@include clearfix();
+	}
+	&__icon{
+		float: left;
+		width: 19px;
+		height: 17px;
+		&_scale{
+			width: 26px;
+		}
+	}
+	&__footer{
+		@include clearfix();
+	}
+}
+
+.productTempl{
+	&__vendorCode + *{
+		margin-top: 15px;
+	}
+	&__img + *{
+		margin-top: 22px;
+	}
+	&__state + * {
+		margin-top: 5px;
+	}
+	&__title + *{
+		margin-top: 17px;
+	}
+	&__icon + *{
+		margin-left: 10px;
+	}
+	* + &__footer{
+		margin-top: 38px;
+	}
+}
+
+.productTempl-wraper{
+	padding: 20px;
+	background: $gray-light;
+}

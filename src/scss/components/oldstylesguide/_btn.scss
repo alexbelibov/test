@@ -1,0 +1,65 @@
+/*
+* @components   Btn
+*/
+$btn-bg: (
+		_blue-dark: $blue-dark,
+		_blue: $blue,
+	//_gray-custom: lighten(saturate(adjust-hue($gray, 0.0000), 0.0000), 22.3529)
+		_gray-custom: $gray-lighter
+);
+$btn-size: (
+		_small: 77px,
+		_normal: 100px,
+		_fullwidth: 100%
+);
+
+
+.btn{
+	position: relative;
+	display: inline-block;
+	height: 35px;
+	&_margin{
+		margin: 10px;
+	}
+
+	&__cnt{
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%)translateY(-50%);
+		@include clearfix();
+	}
+	&__icon{
+		width: 19px;
+		height: 17px;
+		margin-right: 10px;
+		+ *{
+			margin-top: 2px;
+		}
+	}
+	&__text{
+		display: inline-block;
+		color: $white;
+		font-size: 13px;
+		line-height: 17px;
+	}
+
+	$btn-attrSize: _small _normal _fullwidth;
+	@each $attr in $btn-attrSize{
+		&[data-size="#{$attr}"]{
+			width: map_get($btn-size, #{$attr});
+		}
+	}
+
+	$btn-attrBg: _blue-dark _blue _gray-custom;
+	@each $attr in $btn-attrBg{
+		&[data-bg="#{$attr}"]{
+			background: map_get($btn-bg, #{$attr});
+		}
+		&[data-bg="#{$attr}"]:hover{
+			background: lighten(map_get($btn-bg, #{$attr}), 5%);
+		}
+	}
+}

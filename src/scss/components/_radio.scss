@@ -1,0 +1,50 @@
+/*
+* @components   Radio
+*/
+input[type="radio"]{
+	display: none;
+}
+input[type="radio"] + label{
+	cursor: pointer;
+	color: $gray-darker;
+	font-family: $proximaNova-light;
+	transition: 0.3s ease all;
+}
+input[type="radio"]:checked + label{
+	color: $blue-light;
+	cursor: pointer;
+}
+
+input[type="radio"] + label::before {
+	content: "";
+	position: relative;
+	display: inline-block;
+	top: 2px;
+	height: 14px;
+	width: 14px;
+	margin: 0 10px 0 0;
+	background-image: url(../images/controls/radio.png);
+	background-repeat: no-repeat;
+	background-size: 28px;
+	transition: 0.3s ease all;
+}
+//check effects
+input[type="radio"] + label::before {
+	background-position: 0 0;
+}
+input[type="radio"]:checked + label::before {
+	background-position: -14px 0;
+}
+
+//check effects
+input[type="radio"] + label:hover{
+	color: $blue-light;
+}
+/*
+input[type="radio"] + label:hover::before {
+	background-position: -14px 0;
+}
+input[type="checkbox"]:checked + label:hover::before {
+	background-position: -14px 0;
+}
+*/

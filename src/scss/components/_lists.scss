@@ -1,0 +1,12 @@
+/*
+* @components   Item List
+*/
+
+.item-list{
+	> li{
+		display: block;
+		+ li{
+			margin-top: 10px;
+		}
+	}
+}

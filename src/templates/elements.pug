@@ -1,0 +1,91 @@
+extends layout
+block title
+    title Elements
+
+block header
+
+block main
+    section.well
+        .container.decorate-line
+            h1  Цвета
+            -var layers = [{data_name: '_gray-lighter', name: 'Gray Lighter'}, {data_name: '_gray-light', name: 'Gray Light'}, {data_name: '_gray', name: 'Gray'}, {data_name: '_gray-dark', name: 'Gray Dark'}, {data_name: '_gray-darker', name: 'Gray Darker'}, {data_name: '_gray-darkest', name: 'Gray Darkest'}, {data_name: '_blue-dark', name: 'Blue Dark'}, {data_name: '_blue', name: 'Blue'}, {data_name: '_blue-light', name: 'Blue Light'}];
+            .layers-wraper
+                mixin layers-card(layers_param)
+                    .layers
+                        .layers__bg(data-name=''+layers_param.data_name)
+                        .layers__name !{layers_param.name}
+                for layers_param in layers
+                    +layers-card(layers_param)
+    section.well
+        .container.decorate-line
+            h2 Кнопки
+            -var buttons = [{data_size: '_small', data_bg: '_blue', data_icon: 'false'}, {data_size: '_small', data_bg: '_blue-dark', data_icon: 'false'}, {data_size: '_normal', data_bg: '_blue', data_icon: 'true'}, {data_size: '_normal', data_bg: '_blue-dark', data_icon: 'true'}]
+            ul.item-list
+                li
+                    .button-wraper
+                        -for(var i = 0; i < (buttons.length); i++)
+                            if(buttons[i].data_icon != "true")
+                                a.button.button_margin(href="#" data-size=''+buttons[i].data_size data-bg=''+buttons[i].data_bg)
+                                    .button__text Купить
+                li
+                    .button-wraper
+                        -for(var i = 0; i < (buttons.length); i++)
+                            if(buttons[i].data_icon == "true")
+                                a.button.button_margin(href="#" data-size='' + buttons[i].data_size data-bg='' + buttons[i].data_bg)
+                                    img.button__icon(src="images/cart/cart@3x.png" alt="cart")
+                                    span.button__text Купить
+    section.well
+        .container.decorate-line
+            h2 Формы
+            ul.check-list
+                li
+                    input(type="checkbox" id="checkbox1" name="type")
+                    label(for="checkbox1" class="checkbox")
+                        span.checkbox__icon
+                        span.checkbox__text Radiobutton
+                li
+                    input(type="checkbox" id="checkbox2" name="type")
+                    label(for="checkbox2" class="checkbox")
+                        span.checkbox__icon
+                        span.checkbox__text Мужской
+                li
+                    input(type="radio" id="radio1" name="type")
+                    label(for="radio1") Checkbox
+                li
+                    input(type="radio" id="radio2" name="type")
+                    label(for="radio2") Checkbox active
+    section.well
+        .container
+            h2  Карточка товара
+        .container
+            .product-wraper
+                .product
+                    .product__vendorCode Арт. 34534345
+                    .product__img
+                        img(src="http://assets.prophotos.ru/data/articles/0001/4765/68574/original.jpg" alt="")
+                    .product__cnt
+                        .product__state
+                            .product__state_icon
+                            .product__state_text В наличии
+                        .product__title
+                            | Canon PowerShot SX400&nbsp;IS с&nbsp;улучшенной матрицей и&nbsp;объективом
+                        .product__description
+                            -var product__item = [{key: 'Физический размер', value: '23.2 x 15.2 мм'}, {key: 'Диафрагма', value: 'CMOS'}, {key: 'Формат записи', value: 'RAW, JPEG, MP4 и другие'}, {key: 'Фокусное расстояние', value: '18-55 мм.'}]
+                            -for(var i = 0; i < product__item.length; i++)
+                                .product__item.product__description_item
+                                    .product__item_key !{product__item[i].key}
+                                    .product__item_value !{product__item[i].value}
+                        .product__footer
+                            a.button(href="#" data-size='_normal' data-bg='_blue')
+                                img.button__icon(src="images/cart/cart@3x.png" alt="cart")
+                                .button__text Купить
+                            .product__icon-wrap
+                                a.product__icon.product__icon_shape(href="#")
+                                    img(src="images/icons/shape/shape@3x.png" alt="")
+                                a.product__icon.product__icon_scale
+                                    img(src="images/icons/scales/scales@3x.png" alt="")
+
+block footer
+
+block css
+block js

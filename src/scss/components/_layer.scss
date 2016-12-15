@@ -1,0 +1,49 @@
+/*
+* @components   Layers
+*/
+$layers-colors: (
+		_gray-lighter : $gray-lighter,
+		_gray-light : $gray-light,
+		_gray: $gray,
+		_gray-dark: $gray-dark,
+		_gray-darker: $gray-darker,
+		_gray-darkest: $gray-darkest,
+		_blue-dark: $blue-dark,
+		_blue: $blue,
+		_blue-light: $blue-light
+);
+
+.layers-wraper{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-left: -10px;
+	margin-right: -10px;
+}
+.layers{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	width: calc(20% - 20px);
+	padding: 10px;
+	&__bg{
+		width: 50px;
+		height: 50px;
+		border: 1px solid $gray-light;
+		$layers-attr: _gray-lighter _gray-light _gray _gray-dark _gray-darker _gray-darkest _blue-dark _blue _blue-light;
+		@each $attr in $layers-attr{
+			&[data-name="#{$attr}"] {
+				background: map_get($layers-colors, #{$attr});
+			}
+		}
+	}
+	&__name{
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin-left: 10px;
+		font-size: 16px;
+		line-height: 21px;
+	}
+}

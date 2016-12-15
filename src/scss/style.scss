@@ -1,0 +1,341 @@
+@import "core/variables";
+@import "core/mixins";
+@import "core/normalize";
+/*
+* @section      Grid module
+* @description  This section use grid
+*/
+@import "modules/grid";
+
+/*
+* @section      Fonts
+* @description  This section holds all icon fonts stored in template
+*/
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+@font-face {
+	font-family: 'ProximaNova-Light';
+	src: url('../fonts/ProximaNova/ProximaNova-Light.eot');
+	src: url('../fonts/ProximaNova/ProximaNova-Light.woff2') format('woff2'),
+	url('../fonts/ProximaNova/ProximaNova-Light.woff') format('woff'),
+	url('../fonts/ProximaNova/ProximaNova-Light.ttf') format('truetype'),
+	url('../fonts/ProximaNova/ProximaNova-Light.svg#ProximaNova-Light') format('svg'),
+	url('../fonts/ProximaNova/ProximaNova-Light.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova-Regular';
+	src: url('../fonts/ProximaNova/ProximaNova-Regular.eot');
+	src: url('../fonts/ProximaNova/ProximaNova-Regular.woff2') format('woff2'),
+	url('../fonts/ProximaNova/ProximaNova-Regular.woff') format('woff'),
+	url('../fonts/ProximaNova/ProximaNova-Regular.ttf') format('truetype'),
+	url('../fonts/ProximaNova/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg'),
+	url('../fonts/ProximaNova/ProximaNova-Regular.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+/*========================================================
+                      Main Styles
+=========================================================*/
+/*
+* @section      Main Styles
+* @description  This section holds template default elements style declarations
+*/
+.page {
+	overflow: hidden;
+	.lt-ie9 & {
+		min-width: 1200px;
+	}
+}
+
+html {
+	font-size: 70px;
+
+	@media (min-width: $screen-sm-min) and (max-width: $screen-md-min - 1) {
+		font-size: 80px;
+	}
+
+	@media (min-width: $screen-md-min) and (max-width: $screen-lg-min - 1) {
+		font-size: 90px;
+	}
+
+	@media (min-width: $screen-lg-min) {
+		font-size: 100px;
+	}
+}
+
+body {
+	font-family: $default-font-family;
+	font-weight: $default-font-weight;
+	font-size: $default-font-size;
+	line-height: $default-line-height;
+	-webkit-text-size-adjust: none;
+	color: $content-color;
+	background: $content-bg;
+}
+
+/*========================================================
+                      Typography
+=========================================================*/
+/*
+* @subsection   Typography
+* @description  Describes default font settings for basic html elements and
+*               css classes
+*/
+h1, .heading-1{
+	font-size: 32px;
+	line-height: 40px;
+}
+h2, .heading-2{
+	font-size: 32px;
+	line-height: 40px;
+}
+
+
+p, .list, .contact-info {
+	a:hover {
+		text-decoration: underline;
+	}
+}
+
+a {
+	cursor: pointer;
+}
+
+/*
+* @section      Helpers
+* @description  This section contain helpers style
+*/
+
+/*=======================================================
+                       Main Layout
+=========================================================*/
+/*
+* @subsection   Backgrounds
+* @description  Backgrounds custom styles
+*/
+.bg-white {
+	background: $white;
+}
+.bg-what{
+	background: darken(saturate(adjust-hue($white, 0.0000), 0.0000), 3.1373)
+}
+
+/*
+* @subsection   Colors
+* @description  Colors custom styles
+*/
+.clr-white {
+	color: $white;
+}
+
+.clr-default {
+	color: $default!important;
+}
+
+/*
+* @subsection   Well
+* @description  Describes section inner indents
+*/
+.well{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+/*=======================================================
+                        Components
+=========================================================*/
+/*
+* @section      Components
+* @description  This section holds all elements style declarations of template
+*/
+
+/*
+* @subsection  decorate-line
+*/
+
+.decorate-line{
+	position: relative;
+	&:before{
+		position: absolute;
+		content: '';
+		bottom: -20px;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: lighten(saturate(adjust-hue($default, 0.0000), 0.0000), 72.5490);
+	}
+}
+
+/*
+* @subsection  check-list
+*/
+
+.check-list{
+	margin-top: 15px;
+	li + li{
+		margin-top: 15px;
+	}
+}
+
+/*
+* @subsection  wrap (main wrap, contain product elements and side-bar)
+*/
+.wrap{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding: 10px;
+	background: #f7f7f7;
+	//background: rgba($black, 0.5);
+}
+
+/*
+* @subsection  side-bar
+*/
+.side-bar{
+	width: 300px;
+	padding: 30px;
+	background: $white;
+}
+
+/*
+* @subsection  sort(contain )
+*/
+.sort{
+	margin-top: 28px;
+	&__title{
+		font-size: 17px;
+		line-height: 18px;
+	}
+	&__cnt{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+	&__checkbox-group{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: 100%;
+	}
+	&__checkbox{
+		width: 45%;
+	}
+
+}
+
+.sort{
+	&__title + *{
+		margin-top: 15px;
+	}
+}
+
+
+/* ============== */
+/*
+* @subsection  wrap (main wrap, contain product elements and side-bar)
+*/
+.wrapTempl{
+	@include clearfix();
+	padding: 10px;
+	background: #f7f7f7;
+	background: $gray-lighter;
+	.productTempl{
+		margin-right: 10px;
+		box-shadow:         0px 0px 4px 0px rgba(50, 50, 50, 0.75);
+	}
+	> * {
+		float: left;
+	}
+
+
+}
+
+/*
+* @subsection  side-bar
+*/
+.side-barTempl{
+	width: calc((1260px / 4) - (30px / 4));
+	padding: 30px;
+	background: $white;
+	box-shadow:         0px 0px 4px 0px rgba(50, 50, 50, 0.75);
+}
+
+
+/*
+* @subsection   Imports
+*/
+@import "components/layer";
+@import "components/buttons";
+@import "components/checkbox";
+@import "components/radio";
+@import "components/product";
+@import "components/lists";
+
+@import "components/oldstylesguide/colorTempl";
+@import "components/oldstylesguide/btn";
+@import "components/oldstylesguide/productTempl";
+
+/* ========================================================
+                     HEADER  Section
+=========================================================*/
+/*
+* @section      Page Header
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page header
+*/
+header, .page-header {
+	position: relative;
+}
+/* ========================================================
+					 MAIN  Section
+=========================================================*/
+/*
+* @section      Page Content
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page content
+*/
+main, .page-content {
+	min-height: 100vh;
+	background: $content-bg;
+}
+
+
+/* ========================================================
+					 FOOTER  Section
+=========================================================*/
+/*
+* @section      Page Footer
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page footer
+*/
+footer, .page-footer {
+	background: $footer-bg;
+	color: $footer-color;
+}
+
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 569px) {
+
+}
+
+@media (max-width: 399px) {
+}

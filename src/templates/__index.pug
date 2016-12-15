@@ -1,0 +1,61 @@
+extends layout
+block title
+    title Old browser support
+
+block main
+    main
+        .container.container_big
+            .row
+                .wrapTempl
+                    -for(var i = 0; i < 3; i++)
+                        .productTempl
+                            .productTempl__vendorCode Арт. 34534345
+                            .productTempl__img
+                                -var img = ['http://assets.prophotos.ru/data/articles/0001/4765/68574/original.jpg', 'http://assets.prophotos.ru/data/articles/0001/4765/68574/original.jpg', 'http://assets.prophotos.ru/data/articles/0001/4765/68574/original.jpg']
+                                -for(var j = 0; j < img.length; j++)
+                                    img(src=img[i] alt="")
+                            .productTempl__cnt
+                                .productTempl__state
+                                    .productTempl__state_icon
+                                    .productTempl__state_text В наличии
+                                .productTempl__title
+                                    | Canon PowerShot SX400&nbsp;IS с&nbsp;улучшенной матрицей и&nbsp;объективом
+                                .productTempl__description
+                                    -var product__item = [{key: 'Физический размер', value: '23.2 x 15.2 мм'}, {key: 'Диафрагма', value: 'CMOS'}, {key: 'Формат записи', value: 'RAW, JPEG, MP4 и другие'}, {key: 'Фокусное расстояние', value: '18-55 мм.'}]
+                                    ul
+                                        -for(var j = 0; j < product__item.length; j++)
+                                            li.productTempl__item
+                                                .productTempl__item_key !{product__item[j].key}
+                                                .productTempl__item_value !{product__item[j].value}
+                                .productTempl__footer
+                                    a.btn(href="#" data-size='_normal' data-bg='_blue')
+                                        .btn__cnt
+                                            img.btn__icon(src="images/cart/cart@3x.png" alt="cart")
+                                            span.btn__text Купить
+                                    .productTempl__icon-wrap
+                                        a.productTempl__icon.productTempl__icon_shape(href="#")
+                                            img(src="images/icons/shape/shape@3x.png" alt="")
+                                        a.productTempl__icon.productTempl__icon_scale
+                                            img(src="images/icons/scales/scales@3x.png" alt="")
+
+                    .side-barTempl
+                        ul.item-list
+                            li
+                                a.btn(href="#" data-size='_fullwidth' data-bg='_blue')
+                                    .btn__cnt
+                                        span.btn__text Очистить фильтр
+                            li
+                                a.btn(href="#" data-size='_fullwidth' data-bg='_gray-custom')
+                                    .btn__cnt
+                                        span.btn__text.clr-default Очистить фильтр
+                        .sort
+                            .sort__title Производитель
+                            .sort__cnt
+                                .sort__checkbox-group
+                                    -var checkbox = ['Canon', 'Olympus', 'Fujifilm', 'Pentax', 'Nikon', 'Sigma', 'Panasonic', 'Geleral Electrics', 'Leica', 'Zenit']
+                                    -for(var i = 0; i < checkbox.length; i++)
+                                        .sort__checkbox
+                                            input(type="checkbox" id="checkbox" + (i + 1) + "" name="type")
+                                            label(for="checkbox" + (i + 1) + "" class="checkbox")
+                                                span.checkbox__icon
+                                                span.checkbox__text !{checkbox[i]}

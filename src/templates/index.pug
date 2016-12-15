@@ -1,0 +1,62 @@
+extends layout
+block title
+    title Главная
+
+block header
+
+block main
+    main
+        .container.container_big
+            .wrap
+                -for(var i = 0; i < 3; i++)
+                    .product
+                        .product__vendorCode Арт. 34534345
+                        .product__img
+                            img(src="http://assets.prophotos.ru/data/articles/0001/4765/68574/original.jpg" alt="")
+                        .product__cnt
+                            .product__state
+                                .product__state_icon
+                                .product__state_text В наличии
+                            .product__title
+                                | Canon PowerShot SX400&nbsp;IS с&nbsp;улучшенной матрицей и&nbsp;объективом
+                            .product__description
+                                -var product__item = [{key: 'Физический размер', value: '23.2 x 15.2 мм'}, {key: 'Диафрагма', value: 'CMOS'}, {key: 'Формат записи', value: 'RAW, JPEG, MP4 и другие'}, {key: 'Фокусное расстояние', value: '18-55 мм.'}]
+                                -for(var j = 0; j < product__item.length; j++)
+                                    .product__item.product__description_item
+                                        .product__item_key !{product__item[j].key}
+                                        .product__item_value !{product__item[j].value}
+                            .product__footer
+                                a.button(href="#" data-size='_normal' data-bg='_blue')
+                                    img.button__icon(src="images/cart/cart@3x.png" alt="cart")
+                                    .button__text Купить
+                                .product__icon-wrap
+                                    a.product__icon.product__icon_shape(href="#")
+                                        img(src="images/icons/shape/shape@3x.png" alt="")
+                                    a.product__icon.product__icon_scale
+                                        img(src="images/icons/scales/scales@3x.png" alt="")
+
+
+                .side-bar
+                    ul.item-list
+                        li
+                            a.button(href="#" data-size='_fullwidth'.data_size data-bg='_blue')
+                                .button__text Показать результат
+                        li
+                            a.button(href="#" data-size='_fullwidth'.data_size data-bg='_gray-custom')
+                                .button__text.clr-default Очистить фильтр
+                    .sort
+                        .sort__title Производитель
+                        .sort__cnt
+                            .sort__checkbox-group
+                                -var checkbox = ['Canon', 'Olympus', 'Fujifilm', 'Pentax', 'Nikon', 'Sigma', 'Panasonic', 'Geleral Electrics', 'Leica', 'Zenit']
+                                -for(var i = 0; i < checkbox.length; i++)
+                                    .sort__checkbox
+                                        input(type="checkbox" id="checkbox"+(i+1)+"" name="type")
+                                        label(for="checkbox"+(i+1)+"" class="checkbox")
+                                            span.checkbox__icon
+                                            span.checkbox__text !{checkbox[i]}
+
+block footer
+
+block css
+block js

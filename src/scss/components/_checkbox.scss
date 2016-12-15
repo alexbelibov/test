@@ -1,0 +1,61 @@
+/*
+* @components   Checkbox
+*/
+input[type="checkbox"]{
+	display: none;
+}
+//label(class="checkbox")
+input[type="checkbox"] + .checkbox{
+	display: inline-block;
+	color: $gray-darker;
+	transition: 0.3s ease all;
+}
+input[type="checkbox"]:checked + .checkbox{
+	display: inline-block;
+	color: $blue-light;
+}
+
+//span.checkbox__icon
+input[type="checkbox"] + .checkbox .checkbox__icon {
+	display: inline-block;
+	position: relative;
+	top: calc((18px - 14px) / 2);
+	height: 14px;
+	width: 14px;
+	margin: 0 10px 0 0;
+	background-image: url(../images/controls/chekbox.png) ;
+	background-repeat: no-repeat;
+	background-size: 28px;
+	transition: 0.3s ease all;
+}
+//span.checkbox__text
+input[type="checkbox"] + .checkbox .checkbox__text {
+	display: inline-block;
+	font-size: 14px;
+	line-height: 18px;
+	font-family: $proximaNova-light;
+	width: calc(100% - 14px - 10px);
+}
+
+//check effects
+input[type="checkbox"] + .checkbox .checkbox__icon {
+	background-position: 0 0;
+}
+
+input[type="checkbox"]:checked + .checkbox .checkbox__icon {
+	background-position: -14px 0;
+}
+
+//check effects
+input[type="checkbox"] + .checkbox:hover{
+	cursor: pointer;
+	color: $blue-light;
+}
+/*
+input[type="checkbox"] + label::before {
+	background-position: 0 0;
+}
+input[type="checkbox"]:checked + label::before {
+	background-position: -14px 0;
+}
+*/

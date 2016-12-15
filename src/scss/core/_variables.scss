@@ -1,0 +1,56 @@
+//========================================================
+//                     Variables
+//=========================================================
+
+// Resolutions
+$screen-xs-min: 576px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+// Fonts
+$proximaNova-light: 'ProximaNova-Light';
+$proximaNova-regular: 'ProximaNova-Regular';
+$fa: 'FontAwesome';
+
+$default-font-family: $proximaNova-regular;
+$default-font-weight: 400;
+$default-font-size: 14px;
+$default-line-height: 20px;
+
+// Colors
+$white: #ffffff;
+$black: #000000;
+
+$gray: #bfbfbf;
+$gray-light: lighten(saturate(adjust-hue($gray, 0.0000), 0.0000), 12.5490);
+$gray-lighter: lighten(saturate(adjust-hue($gray, 0.0000), 0.0000), 21.9608);
+$gray-dark: darken(saturate(adjust-hue($gray, 0.0000), 0.0000), 25.4902);
+$gray-darker: darken(saturate(adjust-hue($gray, 0.0000), 0.0000), 45.8824);
+$gray-darkest: darken(saturate(adjust-hue($gray, 0.0000), 0.0000), 54.9020);
+
+$blue: #0284c6;
+$blue-dark: darken(desaturate(adjust-hue(#0284c6, -0.2041), 11.4228), 10.0000);
+$blue-light: lighten(desaturate(adjust-hue(#0284c6, 10.5554), 28.7018), 16.0784);
+
+$default: #333333;
+
+$primary: $blue;
+$secondary-1: #81c03d;
+
+$header-color: $white;
+$header-bg: $white;
+
+$content-color: $default;
+$content-bg: $white;
+
+$footer-color: $default;
+$footer-bg: white;
+
+$aleba-colors: (
+		color-1: #ff3246,
+		color-2: #fac800,
+		color-3: #6eb43c,
+		color-4: #64aaff
+);
+
